@@ -23,7 +23,7 @@ int main(int argc, const char* argv[]) {
     newEngine.soundMan = newSoundManager;
 
     newEngine.Startup();
-    newEngine.graphics->sprites = newEngine.graphics->SetAmountOfSprites(1);
+    newEngine.graphics->sprites = {};
     //newEngine.graphics->LoadSprite("Blue pig", "D:/ENGINE/anchorEngine/assets/images/Blue Pig.png", 0.0f, 0.0f);
 
 

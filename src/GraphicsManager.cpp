@@ -301,12 +301,7 @@ namespace engineSpace {
         imageMap[name].imageScale = 10;
 
         Sprite newSprite = Sprite{ name, 0.1f };
-        if (amountOfSprites == 0) {
-            sprites[0] = newSprite;
-        }
-        else {
-            sprites.push_back(newSprite);
-        }
+        sprites.push_back(newSprite);
         amountOfSprites++;
         std::cout << "New size: " << sprites.size() << std::endl;
 

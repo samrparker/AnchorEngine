@@ -5,6 +5,10 @@
 
 void InputManager::Update() {
 	glfwPollEvents();
+	double xPosition = 0;
+	double yPosition = 0;
+	GetMousePosition(&xPosition, &yPosition);
+	//std::cout << "Mouse Position: (" << xPosition << "," << yPosition << ")" << std::endl;
 }
 
 bool InputManager::KeyIsPressed(int keyVal) {
@@ -16,4 +20,8 @@ bool InputManager::KeyIsPressed(int keyVal) {
 
 void InputManager::SetWindow(GLFWwindow* newWindow) {
 	thisWindow = newWindow;
+}
+
+void InputManager::GetMousePosition(double* xPos, double* yPos) {
+	glfwGetCursorPos(thisWindow, xPos, yPos);
 }

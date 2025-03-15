@@ -299,12 +299,12 @@ namespace engineSpace {
         imageMap[name].imageTexture = tex;
         imageMap[name].imagePosition = std::vector{ x, y };
         imageMap[name].imageScale = 10;
-        if (sprites.size() == 1) {
-            sprites[0] = Sprite{ name, 0.1f };
+
+        Sprite newSprite = Sprite{ name, 0.1f };
+        if (amountOfSprites == 0) {
+            sprites[0] = newSprite;
         }
         else {
-
-            Sprite newSprite = Sprite{ name, 0.1f };
             sprites.push_back(newSprite);
         }
         amountOfSprites++;
@@ -409,8 +409,6 @@ namespace engineSpace {
     }
 
     void GraphicsManager::LoadSprites(const std::vector<Sprite>& sprites, WGPURenderPassEncoder renderEncoder) {
-
-        std::cout << "Size of sprites vs. amount: " << sprites.size() << " vs. " << amountOfSprites << std::endl;
         for (int index = 0; index < sprites.size(); index++) {
 
             //std::cout << "Loading sprite " << index+1 << std::endl;

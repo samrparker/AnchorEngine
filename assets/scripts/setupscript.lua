@@ -21,7 +21,7 @@ ECS.Components.position[x] = { x = 10, y = 10 }
 
 
 AddSprite("Blue pig", "assets/images/Blue Pig.png", 0.0, 0.0)
-AddSprite("Button1", "assets/images/Button1.png", 0.0, 250.0)
+AddSprite("Button1", "assets/images/Button1.png", 0.0, 50.0)
 AddScript("GameLoopScript", "assets/scripts/gameloop.lua")
 AddSound("RICK", "assets/sounds/RICKROLL.MP3")
 

@@ -63,7 +63,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable( soloud )
 ## SoLoud doesn't have its own `CMakeLists.txt`, so let's declare a library directly from its sources.
 file(GLOB soloud_sources "${soloud_SOURCE_DIR}/src/audiosource/*/*.c*" "${soloud_SOURCE_DIR}/src/c_api/*.c*" "${soloud_SOURCE_DIR}/src/core/*.c*" "${soloud_SOURCE_DIR}/src/filter/*.c*" "${soloud_SOURCE_DIR}/src/backend/miniaudio/soloud_miniaudio.cpp")
-add_library(soloud ${soloud_sources} "src/UIManager.cpp")
+add_library(soloud ${soloud_sources})
 target_compile_definitions(soloud PRIVATE WITH_MINIAUDIO)
 target_include_directories(soloud PUBLIC "${soloud_SOURCE_DIR}/include")
 if(APPLE)
@@ -123,7 +123,7 @@ FetchContent_MakeAvailable( sol2 )
 
 
 ## Declare the engine library
-add_library( anchorEngine STATIC src/Engine.cpp src/GraphicsManager.cpp src/InputManager.cpp src/ResourceManager.cpp src/SoundManager.cpp src/ScriptManager.cpp "src/UIManager.cpp")
+add_library( anchorEngine STATIC src/Engine.cpp src/GraphicsManager.cpp src/InputManager.cpp src/ResourceManager.cpp src/SoundManager.cpp src/ScriptManager.cpp src/UIManager.cpp)
 
 set_target_properties( anchorEngine PROPERTIES CXX_STANDARD 20 )
 
@@ -133,7 +133,7 @@ target_include_directories( anchorEngine PUBLIC src )
 target_include_directories( anchorEngine PUBLIC demo )
 target_link_libraries( anchorEngine PUBLIC glfw soloud webgpu glfw3webgpu glm stb sol2 lua_static)
 
-add_executable( helloworld demo/helloworld.cpp "src/UIManager.cpp")
+add_executable( helloworld demo/helloworld.cpp)
 add_custom_target( run_helloworld helloworld USES_TERMINAL WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 set_target_properties( helloworld PROPERTIES CXX_STANDARD 20 )
 target_link_libraries( helloworld PRIVATE anchorEngine )

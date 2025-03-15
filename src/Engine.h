@@ -6,7 +6,7 @@
 #include "InputManager.h"
 #include "ScriptManager.h"
 #include "SoundManager.h"
-#include "UIManager"
+#include "UIManager.h"
 
 namespace engineSpace {
     class Engine {

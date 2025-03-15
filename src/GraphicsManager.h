@@ -1,3 +1,5 @@
+#ifndef GRAPHICS_H
+#define GRAPHICS_H
 #include <thread>
 #include <chrono>
 #include <filesystem>
@@ -85,6 +87,7 @@ namespace engineSpace {
         void MoveSprite(const string& name, float moveX, float moveY);
 
         std::vector<Sprite> sprites;
+        std::vector<Sprite> uiSprites;
         int amountOfSprites;
         int drawAmount;
 
@@ -99,3 +102,4 @@ namespace engineSpace {
 
     };
 }
+#endif
